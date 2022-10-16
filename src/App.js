@@ -12,7 +12,7 @@ import "./css/custom.css";
 const App = () => {
   return (
     <div>
-      
+    
     </div>
   );
 };
