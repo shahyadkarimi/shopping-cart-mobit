@@ -7,3 +7,59 @@
 body {
   font-family: "vazir";
 }
+
+/* category menu */
+.category::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #377dff;
+  bottom: 0;
+  transition: width 0.3s;
+}
+.category:hover::before{
+  width: 100%;
+}
+
+/* discount menu */
+.discount::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #fd4545;
+  bottom: 0;
+  transition: width 0.3s;
+}
+.discount:hover::before{
+  width: 100%;
+}
+
+/* mag menu */
+.mag::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #78bf7b;
+  bottom: 0;
+  transition: width 0.3s;
+}
+.mag:hover::before{
+  width: 100%;
+}
+
+/* shop menu */
+.shop::before{
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: #9c71ef;
+  bottom: 0;
+  transition: width 0.3s;
+}
+.shop:hover::before{
+  width: 100%;
+}

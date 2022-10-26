@@ -1,18 +1,25 @@
 import React from "react"
 
+// ---- css
+import "../css/custom.css";
+
 // images 
 import logo from "../images/mobit-logo.svg"
+import category from "../images/category.svg"
+import discount from "../images/discount.svg"
+import mag from "../images/mag-g.svg"
+import shop from "../images/shop.svg"
 
 const DesktopNav = () => {
     return(
-        <div className="hidden lg:block">
-            <div className="w-full h-16 flex items-center justify-center gap-44">
+        <div className="hidden lg:block shadow-[0px_0px_10px_0px_#00000020] px-10 xl:px-20 2xl:px-28">
+            <div className="w-full h-16 flex items-center justify-between">
                 <div className="right-side flex items-center gap-6">
                     <div className="logo">
                         <img className="w-20" src={logo} alt="" />
                     </div>
                     <div className="search relative">
-                        <input className="w-[750px] bg-[#f5f5f5] h-11 rounded-lg px-16 outline-none ring-[#3b80ff] focus:ring-2 transition-all duration-500" type="text" placeholder="جست و جو در مبیت" />
+                        <input className="w-[450px] xl:w-[600px] 2xl:w-[750px] bg-[#f5f5f5] h-11 rounded-lg px-16 outline-none ring-[#3b80ff] focus:ring-2 transition-all duration-500" type="text" placeholder="جست و جو در مبیت" />
                         <div className="search-icon absolute -translate-y-2/4 top-2/4 border-l w-12 h-7 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.1" stroke="#5d6670" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -50,11 +57,23 @@ const DesktopNav = () => {
             </div>
 
             {/* Menu list */}
-            <div className="menu">
-                <div className="category"></div>
-                <div className="discount"></div>
-                <div className="mag"></div>
-                <div className="shop"></div>
+            <div className="menu w-full h-14 flex gap-6 text-sm xl:text-base xl:gap-10 text-[#626262]">
+                <div className="category relative cursor-pointer flex gap-2 items-center">
+                    <img className="w-6" src={category} alt="" />
+                    <h3>دسته بندی ها</h3>
+                </div>
+                <div className="discount relative cursor-pointer flex gap-2 items-center">
+                    <img className="w-6" src={discount} alt="" />
+                    <h3>پیشنهاد های شگفت انگیز</h3>
+                </div>
+                <div className="mag relative cursor-pointer flex gap-2 items-center">
+                    <img className="w-6" src={mag} alt="" />
+                    <h3>اخبار و مقالات روز</h3>
+                </div>
+                <div className="shop relative cursor-pointer flex gap-2 items-center">
+                    <img className="w-6" src={shop} alt="" />
+                    <h3>همکار و قیمت عمده</h3>
+                </div>
             </div>
         </div>
     )

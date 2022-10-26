@@ -5,7 +5,7 @@ import logo from "../images/mobit-logo.svg"
 
 const MobileNav = () =>{
     return(
-        <div className="lg:hidden">
+        <div className="lg:hidden pb-3 shadow-[0px_0px_10px_0px_#00000020]">
             
             {/* Navbar */}
             <div className="navbar w-full flex justify-between items-center h-14 px-5">
