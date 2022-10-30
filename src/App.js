@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 
 // ---- css
 import "./css/custom.css";
@@ -7,6 +7,7 @@ import "./css/custom.css";
 // ---- components
 import MobileNav from "./components/MobileNav"
 import DesktopNav from "./components/DesktopNav"
+import Home from "./components/Home/Home"
 
 // ---- contexts
 
@@ -15,10 +16,12 @@ const App = () => {
     <div>
       <MobileNav />
       <DesktopNav />
+
+    <Routes>
+      <Route path="/" element={ <Home /> }/>
+    </Routes>
     </div>
-    // <Routes>
-    //   <Route path="/" element={}/>
-    // </Routes>
+    
   );
 };
 

@@ -2,14 +2,14 @@
   src: url(../fonts/Vazir.eot), url(../fonts/Vazir.ttf),
     url(../fonts/Vazir.woff), url(../fonts/Vazir.woff2);
 
-    font-family: "vazir";
+  font-family: "vazir";
 }
 body {
   font-family: "vazir";
 }
 
 /* category menu */
-.category::before{
+.category::before {
   content: "";
   position: absolute;
   width: 0;
@@ -18,12 +18,12 @@ body {
   bottom: 0;
   transition: width 0.3s;
 }
-.category:hover::before{
+.category:hover::before {
   width: 100%;
 }
 
 /* discount menu */
-.discount::before{
+.discount::before {
   content: "";
   position: absolute;
   width: 0;
@@ -32,12 +32,12 @@ body {
   bottom: 0;
   transition: width 0.3s;
 }
-.discount:hover::before{
+.discount:hover::before {
   width: 100%;
 }
 
 /* mag menu */
-.mag::before{
+.mag::before {
   content: "";
   position: absolute;
   width: 0;
@@ -46,12 +46,12 @@ body {
   bottom: 0;
   transition: width 0.3s;
 }
-.mag:hover::before{
+.mag:hover::before {
   width: 100%;
 }
 
 /* shop menu */
-.shop::before{
+.shop::before {
   content: "";
   position: absolute;
   width: 0;
@@ -60,6 +60,60 @@ body {
   bottom: 0;
   transition: width 0.3s;
 }
-.shop:hover::before{
+.shop:hover::before {
   width: 100%;
+}
+
+/* Swiper Js */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 25px !important;
+  height: 25px !important;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 15px !important;
+  font-weight: bold;
+  color: #abb4bc;
+}
+
+.swiper-pagination {
+  bottom: 22px !important;
+}
+.swiper-pagination-bullet {
+  background-color: #fff !important;
 }
