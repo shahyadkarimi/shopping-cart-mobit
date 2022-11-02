@@ -8,8 +8,8 @@ const MobileNav = () =>{
         <div className="lg:hidden pb-3 shadow-[0px_0px_10px_0px_#00000020]">
             
             {/* Navbar */}
-            <div className="navbar w-full flex justify-between items-center h-14 px-5">
-                <div className="menu-bars cursor-pointer w-8 h-8 flex justify-center items-center rounded-md">
+            <div className="navbar w-full flex justify-between items-center h-14 px-3 sm:px-5">
+                <div className="menu-bars bg-slate-50 cursor-pointer w-8 h-8 flex justify-center items-center rounded-md">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#5d6670" className="w-6 h-6">
                         <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
                     </svg>
@@ -30,7 +30,7 @@ const MobileNav = () =>{
             </div>
 
             {/* Search bar */}
-            <div className="search px-5 relative">
+            <div className="search relative px-3 sm:px-5">
                 <input className="w-full bg-[#f5f5f5] h-11 rounded-lg px-12 outline-none ring-[#3b80ff] focus:ring-2 transition-all duration-500" type="text" placeholder="جست و جو در مبیت" />
                 <div className="search-icon absolute -translate-y-2/4 top-2/4 right-8">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.1" stroke="#5d6670" className="w-6 h-6">
