@@ -29,7 +29,7 @@ import slideDesktop1 from "../../images/header-slider/slide-7-desktop.jpg"
 import slideDesktop2 from "../../images/header-slider/slide-8-desktop.jpg"
 
 
-const Header = () => {
+const HeaderSlider = () => {
 
     // get window size when screen resize for slider in mobile screens
     const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -43,7 +43,7 @@ const Header = () => {
   }, []);
 
     return (
-        <div className="w-full flex justify-center gap-5 px-3 mt-3 sm:px-5 sm:mt-5 2xl:mt-5 2xl:px-5">
+        <div className="w-full flex justify-center mx-auto gap-5 mt-3 sm:mt-5 2xl:mt-5">
             <div className="desktopSlide-1 hidden lg:block">
                 <img className="rounded-3xl h-[360px]" src={slideDesktop1} alt="desktopSlide" />
             </div>
@@ -67,4 +67,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default HeaderSlider;
