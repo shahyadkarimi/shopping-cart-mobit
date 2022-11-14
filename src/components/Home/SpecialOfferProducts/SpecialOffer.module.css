@@ -1,0 +1,16 @@
+.mySwiper img {
+    width: 100px;
+    height: 100px;
+}
+
+/* .mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+
+} */
+
+@media (min-width: 1024px) {
+    .mySwiper img {
+        width: 148px;
+        height: 148px;
+    }
+}

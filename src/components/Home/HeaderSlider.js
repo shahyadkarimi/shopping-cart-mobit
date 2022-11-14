@@ -12,6 +12,9 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination, Autoplay } from "swiper";
 
+// ---- css
+import "./HeaderSlider.css";
+
 // --- functions
 // window size
 import { getWindowSize } from "../../helper/functions"
