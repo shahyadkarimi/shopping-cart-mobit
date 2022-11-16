@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 // ---- css
-import styles from "./SpecialOffer.module.css";
+import "./SpecialOffer.css";
 
 // --- components
 import SpecialOfferProduct from "./SpercialOfferProduct"
@@ -46,8 +46,8 @@ const SpecialOffer = () => {
     }
 
     return (
-        <div className="lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto mb-36">
-            <Swiper className={styles.mySwiper} slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>
+        <div className="specialOffer lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto mb-36">
+            <Swiper className="mySwiper" slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>
                 <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
                 <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
                 <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
