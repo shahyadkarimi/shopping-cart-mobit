@@ -1,14 +1,13 @@
 import React from "react"
 
 // ---- css
-import "../css/custom.css";
 
 // images 
-import logo from "../images/mobit-logo.svg"
-import category from "../images/category.svg"
-import discount from "../images/discount.svg"
-import mag from "../images/mag-g.svg"
-import shop from "../images/shop.svg"
+import logo from "../../images/mobit-logo.svg"
+import category from "../../images/category.svg"
+import discount from "../../images/discount.svg"
+import mag from "../../images/mag-g.svg"
+import shop from "../../images/shop.svg"
 
 const DesktopNav = () => {
     return(

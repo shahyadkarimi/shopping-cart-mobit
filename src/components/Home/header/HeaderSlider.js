@@ -17,19 +17,19 @@ import "./HeaderSlider.css";
 
 // --- functions
 // window size
-import { getWindowSize } from "../../helper/functions"
+import { getWindowSize } from "../../../helper/functions"
 
 // --- images
-import slide1 from "../../images/header-slider/slide-1.jpg"
-import slide2 from "../../images/header-slider/slide-2.jpg"
-import slide3 from "../../images/header-slider/slide-3.jpg"
-import slide4 from "../../images/header-slider/slide-4.jpg"
-import slide5 from "../../images/header-slider/slide-5.jpg"
-import slide6 from "../../images/header-slider/slide-6.jpg"
-import slide7 from "../../images/header-slider/slide-7.jpg"
-import slide8 from "../../images/header-slider/slide-8.jpg"
-import slideDesktop1 from "../../images/header-slider/slide-7-desktop.jpg"
-import slideDesktop2 from "../../images/header-slider/slide-8-desktop.jpg"
+import slide1 from "../../../images/header-slider/slide-1.jpg"
+import slide2 from "../../../images/header-slider/slide-2.jpg"
+import slide3 from "../../../images/header-slider/slide-3.jpg"
+import slide4 from "../../../images/header-slider/slide-4.jpg"
+import slide5 from "../../../images/header-slider/slide-5.jpg"
+import slide6 from "../../../images/header-slider/slide-6.jpg"
+import slide7 from "../../../images/header-slider/slide-7.jpg"
+import slide8 from "../../../images/header-slider/slide-8.jpg"
+import slideDesktop1 from "../../../images/header-slider/slide-7-desktop.jpg"
+import slideDesktop2 from "../../../images/header-slider/slide-8-desktop.jpg"
 
 
 const HeaderSlider = () => {

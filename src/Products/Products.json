@@ -1,0 +1,70 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "title": "گوشی موبایل نوکیا مدل (Xpress Audio) 5710 دو سیم کارت",
+      "price":"2550000",
+      "offPrice": "2222000",
+      "image": "./ProductsImages/SpecialOffer/mobile.webp",
+      "rate": "4",
+      "comment": "5",
+      "off": "5",
+      "category": "special"
+    },
+    {
+      "id": 2,
+      "title": "گوشی موبایل شیائومی مدل 12 ظرفیت 256 گیگابایت رم 8 گیگابایت",
+      "price":"1868900",
+      "offPrice": "17499000",
+      "image": "./ProductsImages/SpecialOffer/xiaumi.webp",
+      "rate": "3",
+      "comment": "2",
+      "off": "7",
+      "category": "special"
+    },
+    {
+      "id": 3,
+      "title": "کیبورد گیمینگ تی دگر مدل T-Dagger Bali T-TGK311",
+      "price":"8105500",
+      "offPrice": "779000",
+      "image": "./ProductsImages/SpecialOffer/keyboard.webp",
+      "rate": "4",
+      "comment": "100",
+      "off": "3",
+      "category": "special"
+    },
+    {
+      "id": 4,
+      "title": "ساعت مچی هوشمند شیائومی Mibro Air XPAW001",
+      "price":"7250000",
+      "offPrice": "679000",
+      "image": "./ProductsImages/SpecialOffer/smartWatch.webp",
+      "rate": "4",
+      "comment": "7",
+      "off": "10",
+      "category": "special"
+    },
+    {
+      "id": 5,
+      "title": "هندزفری بی سیم کیو سی وای مدل T16",
+      "price":"5450000",
+      "offPrice": "509000",
+      "image": "./ProductsImages/SpecialOffer/airpods.webp",
+      "rate": "3",
+      "comment": "1",
+      "off": "4",
+      "category": "special"
+    },
+    {
+      "id": 6,
+      "title": "گوشی موبایل موتورولا مدل Moto G22 دو سیم کارت ظرفیت 128 گیگابایت و رم 4 گیگابایت",
+      "price":"5360000",
+      "offPrice": "4739000",
+      "image": "./ProductsImages/SpecialOffer/motorola.webp",
+      "rate": "4",
+      "comment": "9",
+      "off": "8",
+      "category": "special"
+    }
+  ]  
+}

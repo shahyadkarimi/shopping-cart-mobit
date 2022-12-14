@@ -1,7 +1,7 @@
 import React from "react"
 
 // images 
-import logo from "../images/mobit-logo.svg"
+import logo from "../../images/mobit-logo.svg"
 
 const MobileNav = () =>{
     return(

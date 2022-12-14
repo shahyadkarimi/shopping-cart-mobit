@@ -1,14 +1,14 @@
 import React from "react"
 
 // --- images
-import phone from "../../images/header-category/phone.svg"
-import phoneStuff from "../../images/header-category/phone-stuff.svg"
-import computer from "../../images/header-category/computer.svg"
-import laptop from "../../images/header-category/laptop.svg"
-import tablet from "../../images/header-category/tablet.svg"
-import airpods from "../../images/header-category/airpods.svg"
-import smartWatch from "../../images/header-category/smart-watch.svg"
-import powerBanks from "../../images/header-category/power-banks.svg"
+import phone from "../../../images/header-category/phone.svg"
+import phoneStuff from "../../../images/header-category/phone-stuff.svg"
+import computer from "../../../images/header-category/computer.svg"
+import laptop from "../../../images/header-category/laptop.svg"
+import tablet from "../../../images/header-category/tablet.svg"
+import airpods from "../../../images/header-category/airpods.svg"
+import smartWatch from "../../../images/header-category/smart-watch.svg"
+import powerBanks from "../../../images/header-category/power-banks.svg"
 
 const HeaderCat = () => {
     return(

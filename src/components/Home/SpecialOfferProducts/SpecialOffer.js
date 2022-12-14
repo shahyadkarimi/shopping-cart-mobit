@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react"
+import React, {useEffect, useState, useContext} from "react"
 
 // --- swiper js
 // Import Swiper React components
@@ -15,12 +15,14 @@ import { Navigation } from "swiper";
 import "./SpecialOffer.css";
 
 // --- components
-import SpecialOfferProduct from "./SpercialOfferProduct"
+import Product from "../shared/Product"
 
 // --- functions
 // window size
 import { getWindowSize } from "../../../helper/functions"
 
+// --- contexts
+import { ProductsContexts } from "../../../contexts/ProductsContextsProvider"
 
 const SpecialOffer = () => {
 
@@ -45,16 +47,22 @@ const SpecialOffer = () => {
         productPerView = 4
     }
 
+    // get products from server
+    const products = useContext(ProductsContexts)
+    const { data } = products
+
+    console.log(data)
     return (
-        <div className="specialOffer lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto mb-36">
+        <div className="specialOffer lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto">
             <Swiper className="mySwiper" slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
-                <SwiperSlide className="p-1"> <SpecialOfferProduct /> </SwiperSlide>
+                {data && data.map(product => (
+                    product.category === "special" &&
+                    <SwiperSlide className="p-1" key={product.id}>
+                        <Product data={product} /> 
+                    </SwiperSlide>
+                ))}
             </Swiper>
+            {/* data.category === "special" */}
         </div>
     )
 }

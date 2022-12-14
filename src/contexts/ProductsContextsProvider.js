@@ -14,7 +14,6 @@ const ProductsContextsProvider = ({children}) => {
         }
 
         fetchAPI()
-        
     }, [])
 
     return(

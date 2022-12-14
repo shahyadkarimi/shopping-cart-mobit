@@ -1,17 +1,19 @@
 import React from "react"
 
-// --- images
-import mobilePic from "../../../images/mobile.webp"
+// --- functions
 
-const SpecialOfferProducts = () => {
+// convert english number to farsi 
+import { toFarsiNumber } from "../../../helper/functions"
+
+const SpecialOfferProducts = ({data}) => {
     return (
         <div className="flex flex-col gap-4 w-[345px] h-auto p-2 rounded-2xl hover:shadow-[0px_0px_10px_#00000014] transition-all duration-300 cursor-pointer group">
             <div className="product-image relative w-full h-[150px] flex justify-center items-center bg-[#f5f5f5] rounded-xl lg:h-[200px]">
-                <img src={mobilePic} alt="" />
+                <img className="group-hover:scale-110 transition-all duration-300" src={data.image} alt={"product-" + data.id} />
                 <div className="absolute top-0 flex justify-between w-full p-2">
                     <div className="right-side flex flex-col gap-3">
                         <div className="offer flex text-[15px] w-fit text-white h-[24px] justify-center items-center px-1 gap-[2px] bg-[#ff6a6a] rounded-md">
-                            <span> ۵ </span>
+                            <span> {toFarsiNumber(data.off)} </span>
                             <svg width="15px" height="18px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M18.707 5.293a1 1 0 0 1 0 1.414l-12 12a1 1 0 0 1-1.414-1.414l12-12a1 1 0 0 1 1.414 0zM17 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM7 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" fill="#fff"/>
                             </svg>
@@ -40,21 +42,20 @@ const SpecialOfferProducts = () => {
                     </div>
                 </div>
             </div>
-            <div className="title text-right text-base text-[#1f1f1f] group-hover:text-black transition-all duration-300 lg:text-[17px]">
-                <h3>
-                گوشی موبایل نوکیا مدل (Xpress Audio) 5710 دو سیم کارت
-                </h3>
+            <div className="title h-14 sm:h-20 md:h-16 lg:h-10 text-right text-base text-[#1f1f1f] group-hover:text-black transition-all duration-300 lg:text-[17px]">
+                <h3> {data.title} </h3>
             </div>
             <div className="price self-end mt-2">
-                <span className="font-semibold text-[19.5px] text-[#1f1f1f]">۲،۲۲۲،۰۰۰</span>
+                <span className="font-semibold text-[19.5px] text-[#1f1f1f]">{toFarsiNumber(data.offPrice)}</span>
+                <span className="text-[15.5px] ml-2 line-through">{toFarsiNumber(data.price)}</span>
                 <span> تومان </span>
             </div>
             <div className="rate flex flex-row-reverse gap-1 self-end">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffa726" className="w-5 h-5">
                     <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
                 </svg>
-                <span className="text-[#666] text-base lg:text-[17px] font-semibold"> ۴ </span>
-                <span className="text-[#666666b2] text-sm self-end"> (۵ نظر) </span>
+                <span className="text-[#666] text-base lg:text-[17px] font-semibold"> {toFarsiNumber(data.rate)} </span>
+                <span className="text-[#666666b2] text-sm self-end"> ({toFarsiNumber(data.comment)} نظر) </span>
             </div>
         </div>
     )

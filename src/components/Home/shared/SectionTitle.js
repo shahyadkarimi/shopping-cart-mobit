@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 
 // functions
-import { toFarsiNumber } from "../../helper/functions"
+import { toFarsiNumber } from "../../../helper/functions"
 
-const OfferTimer = ({timer}) => {
+const SectionTitle = ({time, timer, bgColor, title, titleColor, icon, more}) => {
   const [daysTimer, setDaysTimer] = useState();
   const [hoursTimer, setHoursTimer] = useState();
   const [minutesTimer, setMinutesTimer] = useState();
   const [secondsTimer, setSecondsTimer] = useState();
+
   let interval;
 
   const startTimer = async () => {
-    const countDownTime = new Date(timer).getTime();
+    const countDownTime = new Date(time).getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -41,9 +42,10 @@ const OfferTimer = ({timer}) => {
   });
 
   return (
-    <div className="w-full flex justify-between items-center h-14 bg-[#ff6a6a] rounded-xl my-3 px-3 lg:h-16">
+    <div className={`w-full flex justify-between items-center h-14 bg-[${bgColor}] rounded-xl my-5 px-3 lg:h-16`}>
       <div className="title flex items-center gap-2">
-        <svg
+        {
+          icon && <svg
           className="w-8 lg:w-9"
           viewBox="0 0 24 24"
           fill="none"
@@ -88,38 +90,56 @@ const OfferTimer = ({timer}) => {
             </g>
           </g>
         </svg>
+        }
 
-        <h3 className="font-semibold text-white lg:text-lg"> پیشنهاد ویژه مبیت </h3>
+        <h3 className={`font-semibold text-[${titleColor}] lg:text-lg`}> {title} </h3>
       </div>
-      <div className="timer flex flex-row-reverse gap-1 justify-center items-center font-semibold">
-        <div className="day text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
-          {daysTimer}
-        </div>
-        <span className="text-white text-lg"> : </span>
-        <div className="hours text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
-          {hoursTimer}
-        </div>
-        <span className="text-white text-lg"> : </span>
-        <div className="minutes text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
-          {minutesTimer}
-        </div>
-        <span className="text-white text-lg"> : </span>
-        <div className="seconds text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
-          {secondsTimer}
-        </div>
+      {
+        timer && 
+        <div className="timer flex flex-row-reverse gap-1 justify-center items-center font-semibold">
+          <div className="day text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
+            {daysTimer}
+          </div>
+          <span className="text-white text-lg"> : </span>
+          <div className="hours text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
+            {hoursTimer}
+          </div>
+          <span className="text-white text-lg"> : </span>
+          <div className="minutes text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
+            {minutesTimer}
+          </div>
+          <span className="text-white text-lg"> : </span>
+          <div className="seconds text-[#2c2c2c] flex justify-center items-center text-sm w-8 h-8 bg-white rounded-lg lg:w-12 lg:h-12 lg:text-xl">
+            {secondsTimer}
+          </div>
       </div>
-      <div className="more hidden lg:block">
-        <div className="flex justify-center items-center gap-2 text-white">
-            <h3> مشاهده همه </h3>
+      }
 
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.3" stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
+      {
+        timer ? 
+        <div className="more hidden lg:block">
+          <div className={`flex justify-center items-center gap-2 text-[${more}]`}>
+              <h3> مشاهده همه </h3>
 
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.3" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+
+          </div>
+        </div> :
+        <div className="more">
+          <div className={`flex justify-center items-center gap-2 text-[${more}] text-sm md:text-base`}>
+              <h3> مشاهده همه </h3>
+
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.3" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+
+          </div>
         </div>
-      </div>
+      }
     </div>
   );
 };
 
-export default OfferTimer;
+export default SectionTitle;

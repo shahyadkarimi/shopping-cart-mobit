@@ -64,22 +64,27 @@ body {
   width: 100%;
 }
 
-.mobit-category::-webkit-scrollbar{
+.mobit-category::-webkit-scrollbar {
   height: 5px;
 }
-.mobit-category::-webkit-scrollbar-track{
+.mobit-category::-webkit-scrollbar-track {
   background-color: #dbdbdb;
   border-radius: 10px;
 }
-.mobit-category::-webkit-scrollbar-button{
+.mobit-category::-webkit-scrollbar-button {
   width: 60px;
 }
-.mobit-category::-webkit-scrollbar-thumb{
+.mobit-category::-webkit-scrollbar-thumb {
   background-color: #377dff;
   border-radius: 10px;
 }
 
 /* SVG */
-.cls-1{
+.cls-1 {
   fill: none;
+}
+
+/* banners */
+.banners .swiper-pagination-bullets {
+bottom: 0 !important;
 }
