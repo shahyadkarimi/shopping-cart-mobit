@@ -12,19 +12,19 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 // ---- css
-import "./SpecialOffer.css";
+import "./shared/Products.css";
 
 // --- components
-import Product from "../shared/Product"
+import Product from "./shared/Product"
 
 // --- functions
 // window size
-import { getWindowSize } from "../../../helper/functions"
+import { getWindowSize } from "../../helper/functions"
 
 // --- contexts
-import { ProductsContexts } from "../../../contexts/ProductsContextsProvider"
+import { ProductsContexts } from "../../contexts/ProductsContextsProvider"
 
-const SpecialOffer = () => {
+const SpecialOfferProducts = () => {
 
     // get window size when screen resize for slider in mobile screens
     const [windowSize, setWindowSize] = useState(getWindowSize());
@@ -51,9 +51,8 @@ const SpecialOffer = () => {
     const products = useContext(ProductsContexts)
     const { data } = products
 
-    console.log(data)
     return (
-        <div className="specialOffer lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto">
+        <div className="products lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto">
             <Swiper className="mySwiper" slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>
                 {data && data.map(product => (
                     product.category === "special" &&
@@ -67,4 +66,4 @@ const SpecialOffer = () => {
     )
 }
 
-export default SpecialOffer;
+export default SpecialOfferProducts;

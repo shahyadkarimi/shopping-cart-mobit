@@ -65,6 +65,94 @@
       "comment": "9",
       "off": "8",
       "category": "special"
+    },
+    {
+      "id": 7,
+      "title": "گوشی موبایل شیائومی Redmi Note 10 Pro ظرفیت 128 گیگابایت و رم 8 گیگابایت",
+      "price":"7200000",
+      "offPrice": "6990000",
+      "image": "./ProductsImages/MostViewed/xiaumi-note-10-pro.webp",
+      "rate": "5",
+      "comment": "26",
+      "off": "3",
+      "category": "mostViewed"
+    },
+    {
+      "id": 8,
+      "title": "هدفون بی سیم هوآوی مدل FreeLace",
+      "price":"1012000",
+      "offPrice": "920000",
+      "image": "./ProductsImages/MostViewed/freelace-headphone.webp",
+      "rate": "4",
+      "comment": "53",
+      "off": "9",
+      "category": "mostViewed"
+    },
+    {
+      "id": 9,
+      "title": "مچ بند هوشمند شیائومی مدل Smart Band 7 Pro",
+      "price":"2320000",
+      "offPrice": "2189000",
+      "image": "./ProductsImages/MostViewed/smart-watch.webp",
+      "rate": "3",
+      "comment": "14",
+      "off": "6",
+      "category": "mostViewed"
+    }
+    ,{
+      "id": 10,
+      "title": "گوشی موبایل آنر مدل X7 دو سیم کارت ظرفیت 128گیگابایت و 6 گیگابایت رم",
+      "price":"5203000",
+      "offPrice": "4955000",
+      "image": "./ProductsImages/MostViewed/honor-7x.webp",
+      "rate": "4",
+      "comment": "28",
+      "off": "5",
+      "category": "mostViewed"
+    },
+    {
+      "id": 11,
+      "title": "هندزفری بلوتوثی هایلو مدل Haylou GT6 TWS Earphones",
+      "price":"511000",
+      "offPrice": "469000",
+      "image": "./ProductsImages/MostViewed/earphones.webp",
+      "rate": "4",
+      "comment": "82",
+      "off": "8",
+      "category": "mostViewed"
+    },
+    {
+      "id": 12,
+      "title": "گوشی موبایل نوکیا مدل 105 - 2019 TA-1174 DS دو سیم‌ کارت",
+      "price":"503000",
+      "offPrice": "479000",
+      "image": "./ProductsImages/MostViewed/nokia.webp",
+      "rate": "4",
+      "comment": "529",
+      "off": "5",
+      "category": "mostViewed"
+    },
+    {
+      "id": 13,
+      "title": "ساعت هوشمند کیو سی وای مدل GTC",
+      "price":"711000",
+      "offPrice": "635000",
+      "image": "./ProductsImages/MostViewed/smart-watch-2.webp",
+      "rate": "5",
+      "comment": "19",
+      "off": "11",
+      "category": "mostViewed"
+    },
+    {
+      "id": 14,
+      "title": "گوشی موبایل آنر مدل 70 دو سیم کارت ظرفیت 128 گیگابایت و 8 گیگابایت رم",
+      "price":"12373000",
+      "offPrice": "12130000",
+      "image": "./ProductsImages/MostViewed/honor-70.webp",
+      "rate": "3",
+      "comment": "11",
+      "off": "2",
+      "category": "mostViewed"
     }
   ]  
 }

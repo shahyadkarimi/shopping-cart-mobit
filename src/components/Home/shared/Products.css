@@ -1,10 +1,10 @@
-.specialOffer .mySwiper img {
+.products .mySwiper img {
   width: 100px;
   height: 100px;
 }
 
-.specialOffer .swiper-button-prev,
-.specialOffer .swiper-button-next {
+.products .swiper-button-prev,
+.products .swiper-button-next {
   width: 40px !important;
   height: 40px !important;
   background-color: #fff;
@@ -13,32 +13,32 @@
   transition: all 0.3s;
 }
 
-.specialOffer .swiper-button-prev:hover,
-.specialOffer .swiper-button-next:hover {
+.products .swiper-button-prev:hover,
+.products .swiper-button-next:hover {
   box-shadow: 0px 0px 10px #00000025;
 }
 
-.specialOffer .swiper-button-prev::after,
-.specialOffer .swiper-button-next::after {
+.products .swiper-button-prev::after,
+.products .swiper-button-next::after {
   font-size: 15px !important;
   font-weight: bold;
   color: #abb4bc;
   transition: all 0.3s;
 }
 
-.specialOffer .swiper-button-prev:hover:after,
-.specialOffer .swiper-button-next:hover:after {
+.products .swiper-button-prev:hover:after,
+.products .swiper-button-next:hover:after {
   color: #7a7f83;
 }
 
 @media (min-width: 1024px) {
-  .specialOffer .mySwiper img {
+  .products .mySwiper img {
     width: 148px;
     height: 148px;
   }
 
-  .specialOffer .swiper-button-prev,
-  .specialOffer .swiper-button-next {
+  .products .swiper-button-prev,
+  .products .swiper-button-next {
     width: 45px !important;
     height: 45px !important;
     background-color: #fff;

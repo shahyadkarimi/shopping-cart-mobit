@@ -4,8 +4,9 @@ import React from "react"
 import HeaderSlider from "./header/HeaderSlider"
 import HeaderCat from "./header/HeaderCat"
 import SectionTitle from "./shared/SectionTitle"
-import SpecialOffer from "./SpecialOfferProducts/SpecialOffer"
+import SpecialOfferProducts from "./SpecialOfferProducts"
 import Banner from "./banners/Banner"
+import MostViewedProducts from "./MostViewedProducts"
 
 const Home = () => {
     return(
@@ -13,9 +14,10 @@ const Home = () => {
             <HeaderSlider />
             <HeaderCat />
             <SectionTitle time={"December 16,2022"} timer={true} bgColor={"#ff6a6a"} title={"پیشنهاد ویژه مبیت"} titleColor={"#fff"} icon={true} more={"#fff"} />
-            <SpecialOffer />
+            <SpecialOfferProducts />
             <Banner />
             <SectionTitle  time={"December 16,2022"} timer={false} bgColor={"#f5f5f5"} title={"پر بازدید ترین ها"} titleColor={"#000"} icon={false} more={"#666"} />
+            <MostViewedProducts />
         </div>
     )
 }
