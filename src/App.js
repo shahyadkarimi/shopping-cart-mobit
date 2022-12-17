@@ -5,8 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import "./css/custom.css";
 
 // ---- components
-import MobileNav from "./components/shared/MobileNav";
-import DesktopNav from "./components/shared/DesktopNav";
+import MobileNav from "./components/MobileNav";
+import DesktopNav from "./components/DesktopNav";
 import Home from "./components/Home/Home";
 
 // ---- contexts

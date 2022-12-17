@@ -13,10 +13,10 @@ const Home = () => {
         <div className="max-w-fit mx-auto px-3 sm:px-5">
             <HeaderSlider />
             <HeaderCat />
-            <SectionTitle time={"December 16,2022"} timer={true} bgColor={"#ff6a6a"} title={"پیشنهاد ویژه مبیت"} titleColor={"#fff"} icon={true} more={"#fff"} />
+            <SectionTitle time={"January 16,2023"} timer={true} bgColor={"#ff6a6a"} title={"پیشنهاد ویژه مبیت"} titleColor={"#fff"} icon={true} more={"#fff"} />
             <SpecialOfferProducts />
             <Banner />
-            <SectionTitle  time={"December 16,2022"} timer={false} bgColor={"#f5f5f5"} title={"پر بازدید ترین ها"} titleColor={"#000"} icon={false} more={"#666"} />
+            <SectionTitle  time={""} timer={false} bgColor={"#f5f5f5"} title={"پر بازدید ترین ها"} titleColor={"#000"} icon={false} more={"#666"} />
             <MostViewedProducts />
         </div>
     )

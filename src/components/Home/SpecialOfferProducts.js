@@ -40,11 +40,11 @@ const SpecialOfferProducts = () => {
     let productPerView;
 
     if(windowSize.innerWidth < 640){
-        productPerView = 2
+        productPerView = 2.15
     }else if (windowSize.innerWidth >= 640 && windowSize.innerWidth <= 1024) {
-        productPerView = 3
+        productPerView = 3.15
     } else {
-        productPerView = 4
+        productPerView = 4.15
     }
 
     // get products from server
