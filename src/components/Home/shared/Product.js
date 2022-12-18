@@ -5,7 +5,7 @@ import React from "react"
 // convert english number to farsi 
 import { toFarsiNumber } from "../../../helper/functions"
 
-const SpecialOfferProducts = ({data}) => {
+const Products = ({data}) => {
     return (
         <div className="flex flex-col gap-4 w-[345px] h-auto p-2 rounded-2xl hover:shadow-[0px_0px_10px_#00000014] transition-all duration-300 cursor-pointer group">
             <div className="product-image relative w-full h-[150px] flex justify-center items-center bg-[#f5f5f5] rounded-xl lg:h-[200px]">
@@ -42,23 +42,32 @@ const SpecialOfferProducts = ({data}) => {
                     </div>
                 </div>
             </div>
-            <div className="title h-14 sm:h-20 md:h-16 lg:h-10 text-right text-base text-[#1f1f1f] group-hover:text-black transition-all duration-300 lg:text-[17px]">
+            <div className="title h-16 sm:h-16 lg:h-20 text-right text-[15px] text-[#1f1f1f] group-hover:text-black transition-all duration-300 lg:text-[17px]">
                 <h3> {data.title} </h3>
             </div>
             <div className="price self-end mt-2">
-                <span className="font-semibold text-[19.5px] text-[#1f1f1f]">{toFarsiNumber(data.offPrice)}</span>
-                <span className="text-[15.5px] ml-2 line-through">{toFarsiNumber(data.price)}</span>
-                <span> تومان </span>
+                <span className="product-price font-semibold text-[15px] md:text-[19px] text-[#1f1f1f]">{toFarsiNumber(data.offPrice)}</span>
+                <span className="product-price text-[16px] ml-2 line-through">{toFarsiNumber(data.price)}</span>
+                <span className="text-[14.5px]"> تومان </span>
             </div>
-            <div className="rate flex flex-row-reverse gap-1 self-end">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffa726" className="w-5 h-5">
-                    <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
-                </svg>
-                <span className="text-[#666] text-base lg:text-[17px] font-semibold"> {toFarsiNumber(data.rate)} </span>
-                <span className="text-[#666666b2] text-sm self-end"> ({toFarsiNumber(data.comment)} نظر) </span>
+
+            {/* rate & add to cart btn section */}
+            <div className="flex flex-row-reverse justify-between items-center">
+                <div className="rate flex flex-row-reverse gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="#ffa726" className="w-5 h-5">
+                        <path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd" />
+                    </svg>
+                    <span className="text-[#666] text-base lg:text-[17px] font-semibold"> {toFarsiNumber(data.rate)} </span>
+                    <span className="text-[#666666b2] text-sm self-end"> ({toFarsiNumber(data.comment)} نظر) </span>
+                </div>
+                <button className="add-to-cart w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="#fff" className="w-5 h-5 transition-all duration-300">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg>
+                </button>
             </div>
         </div>
     )
 }
 
-export default SpecialOfferProducts;
+export default Products;

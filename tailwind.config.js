@@ -8,6 +8,7 @@ module.exports = {
     "./src/components/Home/banners/*.js",
     "./src/components/Home/header/*.js",
     "./src/components/Home/shared/*.js",
+    "./src/components/Cart/*.js",
   ],
   theme: {
     extend: {},

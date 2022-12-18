@@ -50,7 +50,7 @@ const MostViewedProducts = () => {
     // get products from server
     const products = useContext(ProductsContexts)
     const { data } = products
-console.log(data)
+
     return (
         <div className="products lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto">
             <Swiper className="mySwiper" slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>

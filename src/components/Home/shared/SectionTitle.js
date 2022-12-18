@@ -92,7 +92,7 @@ const SectionTitle = ({time, timer, bgColor, title, titleColor, icon, more}) => 
         </svg>
         }
 
-        <h3 className={`font-semibold text-[${titleColor}] lg:text-lg`}> {title} </h3>
+        <h3 className={`font-semibold text-${titleColor} lg:text-lg`}> {title} </h3>
       </div>
       {
         timer && 
@@ -118,7 +118,7 @@ const SectionTitle = ({time, timer, bgColor, title, titleColor, icon, more}) => 
       {
         timer ? 
         <div className="more hidden lg:block">
-          <div className={`flex justify-center items-center gap-2 text-[${more}]`}>
+          <div className={`flex justify-center items-center gap-2 text-${more}`}>
               <h3> مشاهده همه </h3>
 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.3" stroke="currentColor" className="w-5 h-5">
@@ -128,7 +128,7 @@ const SectionTitle = ({time, timer, bgColor, title, titleColor, icon, more}) => 
           </div>
         </div> :
         <div className="more">
-          <div className={`flex justify-center items-center gap-2 text-[${more}] text-sm md:text-base`}>
+          <div className={`flex justify-center items-center gap-2 text-${more} text-sm md:text-base`}>
               <h3> مشاهده همه </h3>
 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.3" stroke="currentColor" className="w-5 h-5">

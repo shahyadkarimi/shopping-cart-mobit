@@ -4,6 +4,14 @@
 
   font-family: "vazir";
 }
+
+@font-face {
+  src: url(../fonts/yekan/yekan-regular.eot), url(../fonts/yekan/yekan-regular.ttf),
+  url(../fonts/yekan/yekan-regular.woff);
+
+  font-family: "yekan";
+}
+
 body {
   font-family: "vazir";
 }
@@ -87,4 +95,13 @@ body {
 /* banners */
 .banners .swiper-pagination-bullets {
 bottom: 0 !important;
+}
+
+/* Products */
+.product-price {
+  font-family: "yekan";
+}
+
+.add-to-cart:hover svg{
+  transform: scale(1.1);
 }
