@@ -1,7 +1,11 @@
-import React from "react"
+import React,{ useContext } from "react"
 import { Link } from "react-router-dom"
 
-// ---- css
+// --- context
+import { cartContext } from "../contexts/CartContext"
+
+// --- functions
+import { toFarsiNumber } from "../helper/functions" 
 
 // images 
 import logo from "../images/mobit-logo.svg"
@@ -11,6 +15,8 @@ import mag from "../images/mag-g.svg"
 import shop from "../images/shop.svg"
 
 const DesktopNav = () => {
+    const { state } = useContext(cartContext)
+    console.log(state.selectedItems)
     return(
         <div className="hidden lg:block shadow-[0px_0px_10px_0px_#00000020] px-10 xl:px-20 2xl:px-28">
             <div className="w-full h-16 flex items-center justify-between">
@@ -49,24 +55,45 @@ const DesktopNav = () => {
 
                         <h3>ورود / ثبت نام</h3>
                     </div>
-                    <Link to="/cart" className="cart relative group cursor-pointer bg-[#f5f5f5] text-[#abb4bc] text-sm flex items-center justify-center gap-2 p-3 rounded-lg transition-all duration-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                            <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clipRule="evenodd" />
-                        </svg>
+                    {
+                        state.selectedItems.length === 0 ?
+                            <Link to="/cart" className="cart relative group cursor-pointer bg-[#f5f5f5] text-[#abb4bc] text-sm flex items-center justify-center gap-2 p-3 rounded-lg transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 transition-all duration-300">
+                                    <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clipRule="evenodd" />
+                                </svg>
 
-                        <h3>سبد خرید</h3>
+                                <h3>سبد خرید</h3>
 
-                        <div className="cart-preview absolute opacity-0 invisible left-0 top-14 z-10 group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                            <div className="flex flex-col justify-center items-center gap-6 cursor-default w-96 h-52 bg-white rounded-2xl shadow-[0px_0px_16px_#0000001a]">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[74px] h-[74px]">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
-                            </svg>
+                                <div className="cart-preview absolute opacity-0 invisible left-0 top-14 z-10 group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                    <div className="flex flex-col justify-center items-center gap-6 cursor-default w-96 h-52 bg-white rounded-2xl shadow-[0px_0px_16px_#0000001a]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[74px] h-[74px]">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
 
 
-                                <h3 className="text-[15px] text-[#636c76]"> سبد خرید شما خالی است. </h3>
-                            </div>
-                        </div>
-                    </Link>
+                                        <h3 className="text-[15px] text-[#636c76]"> سبد خرید شما خالی است. </h3>
+                                    </div>
+                                </div>
+                            </Link> :
+                            <Link to="/cart" className="cart relative group cursor-pointer bg-[#f5f5f5] text-[#abb4bc] text-sm flex items-center justify-center gap-2 p-3 rounded-lg transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3b80ff" className="w-5 h-5 transition-all duration-300">
+                                    <path fillRule="evenodd" d="M7.5 6v.75H5.513c-.96 0-1.764.724-1.865 1.679l-1.263 12A1.875 1.875 0 004.25 22.5h15.5a1.875 1.875 0 001.865-2.071l-1.263-12a1.875 1.875 0 00-1.865-1.679H16.5V6a4.5 4.5 0 10-9 0zM12 3a3 3 0 00-3 3v.75h6V6a3 3 0 00-3-3zm-3 8.25a3 3 0 106 0v-.75a.75.75 0 011.5 0v.75a4.5 4.5 0 11-9 0v-.75a.75.75 0 011.5 0v.75z" clipRule="evenodd" />
+                                </svg>
+                                <span> {toFarsiNumber(state.selectedItems.length)} </span> 
+                                <h3>کالا </h3>
+
+                                <div className="cart-preview absolute opacity-0 invisible left-0 top-14 z-10 group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                                    <div className="flex flex-col justify-center items-center gap-6 cursor-default w-96 h-52 bg-white rounded-2xl shadow-[0px_0px_16px_#0000001a]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-[74px] h-[74px]">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                                    </svg>
+
+
+                                        <h3 className="text-[15px] text-[#636c76]"> سبد خرید شما خالی است. </h3>
+                                    </div>
+                                </div>
+                            </Link>
+                    }
                 </div>
             </div>
 

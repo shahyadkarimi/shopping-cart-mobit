@@ -5,7 +5,7 @@ import { productsAPI } from "../service/productsAPI"
 
 export const ProductsContexts = createContext()
 
-const ProductsContextsProvider = ({children}) => {
+const ProductsContext = ({children}) => {
     const [products, setProducts] = useState([])
 
     useEffect( () => {
@@ -23,4 +23,4 @@ const ProductsContextsProvider = ({children}) => {
     )
 }
 
-export default ProductsContextsProvider;
+export default ProductsContext;

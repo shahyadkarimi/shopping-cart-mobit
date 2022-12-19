@@ -11,19 +11,22 @@ import Home from "./components/Home/Home";
 import Cart from "./components/Cart/Cart";
 
 // ---- contexts
-import ProductsContextsProvider from "./contexts/ProductsContextsProvider";
+import ProductsContext from "./contexts/ProductsContext";
+import CartContext from "./contexts/CartContext"
 
 const App = () => {
   return (
-    <ProductsContextsProvider>
-      <MobileNav />
-      <DesktopNav />
+    <ProductsContext>
+      <CartContext>
+        <MobileNav />
+        <DesktopNav />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-    </ProductsContextsProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </CartContext>
+    </ProductsContext>
   );
 };
 

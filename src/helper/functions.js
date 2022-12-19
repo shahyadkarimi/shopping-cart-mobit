@@ -11,4 +11,22 @@ const toFarsiNumber = (num) => {
   return num.toString().replace(/\d/g, (x) => farsiDigits[x]);
 };
 
-export { getWindowSize, toFarsiNumber };
+// checking product is in cart or not
+const isInCart = (state, id) => {
+  const isIn = !!state.selectedItems.find((item) => item.id === id);
+
+  return isIn;
+};
+
+// checking product quantity
+const quantity = (state, id) => {
+  const productIndex = state.selectedItems.findIndex((item) => item.id === id);
+
+  if (productIndex === -1) {
+    return false;
+  } else {
+    return state.selectedItems[productIndex].quantity;
+  }
+};
+
+export { getWindowSize, toFarsiNumber, isInCart, quantity };

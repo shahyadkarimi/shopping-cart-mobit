@@ -22,7 +22,7 @@ import Product from "./shared/Product"
 import { getWindowSize } from "../../helper/functions"
 
 // --- contexts
-import { ProductsContexts } from "../../contexts/ProductsContextsProvider"
+import { ProductsContexts } from "../../contexts/ProductsContext"
 
 const MostViewedProducts = () => {
 
