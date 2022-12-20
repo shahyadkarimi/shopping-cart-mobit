@@ -7,6 +7,13 @@ const initialState = {
   checkout: false
 };
 
+const CartCalculater = (products) => {
+    const itemsCounter = products.reduce((total, product) => total + product.quantity, 0)
+    const total = products.reduce((total, product) => total + product.offPrice * product.quantity, 0)
+
+    return { itemsCounter, total }
+}
+
 const cartReducer = (state, action) => {
     switch(action.type) {
 
@@ -20,7 +27,8 @@ const cartReducer = (state, action) => {
             }
             return {
                 ...state,
-                selectedItems: [...state.selectedItems]
+                selectedItems: [...state.selectedItems],
+                ...CartCalculater(state.selectedItems)
             }
 
         // remove items from cart
@@ -29,7 +37,8 @@ const cartReducer = (state, action) => {
             
             return {
                 ...state,
-                selectedItems: [...newSelectedItems]
+                selectedItems: [...newSelectedItems],
+                ...CartCalculater(state.selectedItems)
             }
 
         // add items quantity
@@ -39,6 +48,7 @@ const cartReducer = (state, action) => {
 
             return {
                 ...state,
+                ...CartCalculater(state.selectedItems)
             }
         
         // remove items quantity
@@ -48,6 +58,7 @@ const cartReducer = (state, action) => {
 
             return {
                 ...state,
+                ...CartCalculater(state.selectedItems)
             }
 
         case "CHECKOUT": 
