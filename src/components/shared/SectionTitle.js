@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // functions
-import { toFarsiNumber } from "../../../helper/functions"
+import { toFarsiNumber } from "../../helper/functions"
 
 const SectionTitle = ({time, timer, bgColor, title, titleColor, icon, more}) => {
   const [daysTimer, setDaysTimer] = useState();

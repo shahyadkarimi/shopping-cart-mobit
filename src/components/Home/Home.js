@@ -3,7 +3,7 @@ import React from "react"
 // ---- components
 import HeaderSlider from "./header/HeaderSlider"
 import HeaderCat from "./header/HeaderCat"
-import SectionTitle from "./shared/SectionTitle"
+import SectionTitle from "../shared/SectionTitle"
 import SpecialOfferProducts from "./SpecialOfferProducts"
 import Banner from "./banners/Banner"
 import MostViewedProducts from "./MostViewedProducts"

@@ -38,7 +38,7 @@ const cartReducer = (state, action) => {
             return {
                 ...state,
                 selectedItems: [...newSelectedItems],
-                ...CartCalculater(state.selectedItems)
+                ...CartCalculater(newSelectedItems)
             }
 
         // add items quantity

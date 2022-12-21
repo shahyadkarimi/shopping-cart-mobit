@@ -3,10 +3,10 @@ import React, { useContext } from "react"
 // --- functions
 
 // convert english number to farsi 
-import { toFarsiNumber, isInCart, quantity } from "../../../helper/functions"
+import { toFarsiNumber, isInCart, quantity } from "../../helper/functions"
 
 // contexts
-import { cartContext } from "../../../contexts/CartContext"
+import { cartContext } from "../../contexts/CartContext"
 
 
 const Product = ({data}) => {

@@ -15,7 +15,7 @@ import { Navigation } from "swiper";
 import "./shared/Products.css";
 
 // --- components
-import Product from "./shared/Product"
+import Product from "../shared/Product"
 
 // --- functions
 // window size
