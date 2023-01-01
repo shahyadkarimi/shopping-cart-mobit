@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
 // ---- css
-import "./shared/Products.css";
+import "../shared/Products.css";
 
 // --- components
 import Product from "../shared/Product"

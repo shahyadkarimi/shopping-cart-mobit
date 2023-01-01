@@ -50,7 +50,7 @@ const HeaderSlider = () => {
             <div className="desktopSlide-1 hidden lg:block">
                 <img className="rounded-3xl h-[360px]" src={slideDesktop1} alt="desktopSlide" />
             </div>
-            <div className="slider w-full h-[220px] sm:h-[320px] md:h-[340px] lg:w-[630px] lg:h-[360px] xl:w-[760px] 2xl:w-[930px]">
+            <div className="header-slider w-full h-[220px] sm:h-[320px] md:h-[340px] lg:w-[630px] lg:h-[360px] xl:w-[760px] 2xl:w-[930px]">
                 <Swiper autoplay={{delay: 2500,disableOnInteraction: false,}} loop={true} navigation={true} pagination={{clickable: true,}} modules={[Autoplay, Navigation, Pagination]}  className="mySwiper rounded-3xl">
                     {windowSize.innerWidth < 1024 && <SwiperSlide> <img src={slide7} alt="slide7" /> </SwiperSlide>}
                     <SwiperSlide> <img src={slide1} alt="slide1" /> </SwiperSlide>

@@ -21,8 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json": "json-server -w ./src/Products/Products.json",
-    "tailwind": "tailwind -i ./src/tailwind.css -o ./public/css/style.css -w"
+    "tailwind": "tailwind -i ./src/tailwind.css -o ./src/css/style.css -w",
+    "json": "json-server -w ./src/Products/Products.json"
   },
   "eslintConfig": {
     "extends": [

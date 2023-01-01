@@ -7,8 +7,9 @@ module.exports = {
     "./src/components/Home/*.js",
     "./src/components/Home/banners/*.js",
     "./src/components/Home/header/*.js",
-    "./src/components/Home/shared/*.js",
+    "./src/components/shared/*.js",
     "./src/components/Cart/*.js",
+    "./src/components/ProductsPages/*.js",
   ],
   theme: {
     extend: {},

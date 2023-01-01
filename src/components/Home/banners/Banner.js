@@ -37,8 +37,8 @@ const Banner = () => {
         {
           windowSize.innerWidth < 1024 && 
           <Swiper autoplay={{delay: 2500,disableOnInteraction: false,}} loop={true} pagination={{clickable:true,}} modules={[Pagination, Autoplay]} className="mySwiper rounded-lg">
-            <SwiperSlide> <img src={lenovo} alt="lenovoBanner" /> </SwiperSlide>
-            <SwiperSlide> <img src={adata} alt="lenovoBanner" /> </SwiperSlide>
+            <SwiperSlide> <img className="w-full" src={lenovo} alt="lenovoBanner" /> </SwiperSlide>
+            <SwiperSlide> <img className="w-full" src={adata} alt="lenovoBanner" /> </SwiperSlide>
           </Swiper>
         }
         

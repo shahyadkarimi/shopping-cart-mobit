@@ -1,0 +1,122 @@
+/* Swiper Js */
+.productPage-Slider .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.productPage-Slider .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.productPage-Slider .mySwiper2 .swiper-slide img {
+  display: block;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  padding: 25px;
+}
+
+.productPage-Slider .swiper {
+  width: 100%;
+  height: 300px;
+  margin: 0;
+}
+
+.productPage-Slider .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.productPage-Slider .mySwiper2 {
+  width: 100%;
+  height: 80%;
+  margin-top: 20px;
+  background: #f5f5f5;
+  border-radius: 15px;
+}
+
+.productPage-Slider .mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.productPage-Slider .mySwiper .swiper-wrapper {
+    justify-content: space-between !important;
+}
+
+.productPage-Slider .mySwiper .swiper-slide {
+  width: 100px !important;
+  height: 100px !important;
+  opacity: 0.4;
+  margin-left: 0px !important;
+  background: #f5f5f5;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.productPage-Slider .mySwiper .swiper-slide img {
+  display: block;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+
+.productPage-Slider .mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+
+/* titles */
+.en-title h4::before {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: #ececec;
+    border-radius: 20px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.en-title h4::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 2px;
+    background-color: #ececec;
+    border-radius: 20px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* responsive */
+@media (min-width: 768px) {
+
+  .productPage-Slider .mySwiper .swiper-slide{
+    width: 85px !important;
+    height: 85px !important;
+  }
+
+  .productPage-Slider .mySwiper .swiper-slide img{
+    width: 60px;
+    height: 60px;
+  }
+}

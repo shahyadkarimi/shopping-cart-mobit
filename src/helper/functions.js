@@ -29,4 +29,11 @@ const quantity = (state, id) => {
   }
 };
 
-export { getWindowSize, toFarsiNumber, isInCart, quantity };
+// unique id generator
+const idGenerator = () => {
+  return Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+}
+
+export { getWindowSize, toFarsiNumber, isInCart, quantity, idGenerator };

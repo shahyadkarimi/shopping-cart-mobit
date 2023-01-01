@@ -14,7 +14,7 @@ const CartProductPerview = ({data}) => {
   return (
     <div className="product group w-full h-fit flex items-center text-[#272a2e]">
       <div className="right-side w-1/6">
-        <img className="w-[55px] h-[55px]" src={data.image} alt="" />
+        <img className="w-[55px] h-[55px]" src={data.images[0].img} alt="" />
       </div>
       <div className="left-side product-seprate w-5/6  flex flex-col gap-4 pt-3 group-first:pt-0 border-t group-first:border-0">
         <div className="title">

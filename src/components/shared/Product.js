@@ -1,4 +1,5 @@
 import React, { useContext } from "react"
+import { Link } from "react-router-dom"
 
 // --- functions
 
@@ -13,8 +14,8 @@ const Product = ({data}) => {
     const { state, dispatch } = useContext(cartContext)
 
     return (
-        <div className="flex flex-col gap-4 w-[345px] h-auto p-2 rounded-2xl hover:shadow-[0px_0px_10px_#00000014] transition-all duration-300 cursor-pointer group">
-            <div className="product-image relative w-full h-[150px] flex justify-center items-center bg-[#f5f5f5] rounded-xl lg:h-[200px]">
+        <div className="flex flex-col gap-4 h-auto p-2 rounded-2xl hover:shadow-[0px_0px_10px_#00000014] transition-all duration-300 cursor-pointer group">
+            <Link to={`/products/${data.id}`} className="product-image relative w-full h-[150px] flex justify-center items-center bg-[#f5f5f5] rounded-xl lg:h-[200px]">
                 <img className="group-hover:scale-110 transition-all duration-300" src={data.image} alt={"product-" + data.id} />
                 <div className="absolute top-0 flex justify-between w-full p-2">
                     <div className="right-side flex flex-col gap-3">
@@ -47,9 +48,10 @@ const Product = ({data}) => {
                         </svg>
                     </div>
                 </div>
-            </div>
+            </Link>
+            {/* title */}
             <div className="title h-16 sm:h-16 lg:h-20 text-right text-[15px] text-[#1f1f1f] group-hover:text-black transition-all duration-300 lg:text-[17px]">
-                <h3> {data.title} </h3>
+                <Link to={`/products/${data.id}`}> {data.title} </Link>
             </div>
             <div className="price self-end mt-2">
                 <span className="product-price font-semibold text-[15px] md:text-[19px] text-[#1f1f1f]">{toFarsiNumber(data.offPrice)}</span>
@@ -67,28 +69,28 @@ const Product = ({data}) => {
                     <span className="text-[#666666b2] text-sm self-end"> ({toFarsiNumber(data.comment)} نظر) </span>
                 </div>
                 
-                <div className="cart-btns flex justify-center items-center gap-3">
+                <div className="cart-btns flex justify-center items-center lg:gap-3">
 
                 {/* increase or add btn */}
                 {
                     isInCart(state, data.id) ? 
-                    <button onClick={() => dispatch({type: "INCREASE", payload: data})} className="add-to-cart w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
+                    <button onClick={() => dispatch({type: "INCREASE", payload: data})} className="add-to-cart w-8 h-8 lg:w-9 lg:h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" className="w-5 h-5 transition-all duration-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
                         </svg>
                     </button> :
-                    <button onClick={() => dispatch({type: "ADD_ITEM", payload: data})} className="add-to-cart w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
+                    <button onClick={() => dispatch({type: "ADD_ITEM", payload: data})} className="add-to-cart w-8 h-8 lg:w-9 lg:h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" className="w-5 h-5 transition-all duration-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
                         </svg>
                     </button>
                 }
                 {/* products quantity */}
-                    <span> {quantity(state, data.id) && toFarsiNumber(quantity(state, data.id))} </span>
+                    <span className="text-lg w-7 flex justify-center items-center font-semibold"> {quantity(state, data.id) && toFarsiNumber(quantity(state, data.id))} </span>
 
-                {/* decrease or delete btn */}
+                {/* decrease or remove btn */}
                 { quantity(state, data.id) === 1 && 
-                    <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: data})} className="add-to-cart w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
+                    <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: data})} className="add-to-cart w-8 h-8 lg:w-9 lg:h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" className="w-5 h-5 transition-all duration-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
                         </svg>
@@ -97,7 +99,7 @@ const Product = ({data}) => {
 
                 {
                     quantity(state, data.id) > 1 &&
-                    <button onClick={() => dispatch({type: "DECREASE", payload: data})} className="add-to-cart w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
+                    <button onClick={() => dispatch({type: "DECREASE", payload: data})} className="add-to-cart w-8 h-8 lg:w-9 lg:h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="white" className="w-5 h-5 transition-all duration-300">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M18 12H6" />
                         </svg>
