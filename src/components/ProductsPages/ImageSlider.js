@@ -15,7 +15,7 @@ const ImageSlider = ({ data }) => {
 
   return (
     <div>
-      <div className="productPage-Slider relative flex flex-col gap-4 p-5 justify-center items-center lg:w-[450px] lg:h-[450px]">
+      <div className="productPage-Slider relative flex flex-col gap-4 p-5 justify-center items-center lg:w-[350px] lg:h-[350px] lg:mt-14 xl:w-[400px] xl:h-[400px] xl:mt-6 2xl:w-[450px] 2xl:h-[450px] 2xl:mt-0">
         <div className="w-full h-full p-5 bg-[#f5f5f5] flex justify-center items-center rounded-3xl">
           <img className="w-64" src={slider.img} alt="" />
         </div>

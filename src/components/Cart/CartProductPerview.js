@@ -5,6 +5,7 @@ import { toFarsiNumber, quantity } from "../../helper/functions"
 
 // contexts
 import { cartContext } from "../../contexts/CartContext"
+import { Link } from "react-router-dom";
 
 const CartProductPerview = ({data}) => {
 
@@ -13,13 +14,13 @@ const CartProductPerview = ({data}) => {
 
   return (
     <div className="product group w-full h-fit flex items-center text-[#272a2e]">
-      <div className="right-side w-1/6">
+      <Link to={`/products/${data.id}`} className="right-side w-1/6">
         <img className="w-[55px] h-[55px]" src={data.images[0].img} alt="" />
-      </div>
+      </Link>
       <div className="left-side product-seprate w-5/6  flex flex-col gap-4 pt-3 group-first:pt-0 border-t group-first:border-0">
-        <div className="title">
+        <Link to={`/products/${data.id}`}  className="title">
           <h3 className="text-[14px] break-words"> {data.title} </h3>
-        </div>
+        </Link>
         <div className="price-btns flex flex-row-reverse justify-between items-center">
           <div className="price flex justify-center items-center gap-2">
             <span className="text-lg">{toFarsiNumber(data.offPrice)}</span>

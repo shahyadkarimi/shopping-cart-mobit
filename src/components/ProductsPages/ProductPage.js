@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { useParams, Link } from "react-router-dom";
 
 // ---- css
 import "./ProductPage.css";
@@ -312,95 +312,118 @@ const ProductPage = () => {
                   </div>
                 </div>
 
-                <div className="flex w-full justify-start items-center gap-1">
-                  {/* add or increase btn */}
-                  {isInCart(state, product.id) ? (
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "INCREASE", payload: product })
-                      }
-                      className="w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="white"
-                        className="w-5 h-5 transition-all duration-300"
+                <div className="flex w-full">
+                  <div className="flex w-full justify-start items-center gap-1">
+                    {/* add or increase btn */}
+                    {isInCart(state, product.id) ? (
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "INCREASE", payload: product })
+                        }
+                        className="w-8 h-8 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300 xl:w-9 xl:h-9"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 6v12m6-6H6"
-                        />
-                      </svg>
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "ADD_ITEM", payload: product })
-                      }
-                      className="text-[14px] font-semibold bg-[#3b80ff] text-white w-full h-11 rounded-xl"
-                    >
-                      افزودن به سبد خرید
-                    </button>
-                  )}
-
-                  {/* products quantity */}
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="white"
+                          className="w-5 h-5 transition-all duration-300"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 6v12m6-6H6"
+                          />
+                        </svg>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "ADD_ITEM", payload: product })
+                        }
+                        className="text-[14px] font-semibold bg-[#3b80ff] text-white w-full h-11 rounded-xl"
+                      >
+                        افزودن به سبد خرید
+                      </button>
+                    )}
+                    {/* products quantity */}
+                    {isInCart(state, product.id) && (
+                      <span className="w-5 flex justify-center text-lg font-semibold">
+                        {quantity(state, product.id) &&
+                          toFarsiNumber(quantity(state, product.id))}
+                      </span>
+                    )}
+                    {/* remove btn */}
+                    {quantity(state, product.id) === 1 && (
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "REMOVE_ITEM", payload: product })
+                        }
+                        className="w-8 h-8 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300 xl:w-9 xl:h-9"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="white"
+                          className="w-5 h-5 transition-all duration-300"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                          />
+                        </svg>
+                      </button>
+                    )}
+                    {quantity(state, product.id) > 1 && (
+                      <button
+                        onClick={() =>
+                          dispatch({ type: "DECREASE", payload: product })
+                        }
+                        className="w-8 h-8 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300 xl:w-9 xl:h-9"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="white"
+                          className="w-5 h-5 transition-all duration-300"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M18 12H6"
+                          />
+                        </svg>
+                      </button>
+                    )}
+                  </div>
                   {isInCart(state, product.id) && (
-                    <span className="w-5 flex justify-center text-xl font-semibold">
-                      {" "}
-                      {quantity(state, product.id) &&
-                        toFarsiNumber(quantity(state, product.id))}{" "}
-                    </span>
-                  )}
-                  {/* remove btn */}
-                  {quantity(state, product.id) === 1 && (
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "REMOVE_ITEM", payload: product })
-                      }
-                      className="w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300"
+                    <Link
+                      to="/cart"
+                      className="go-to-cart w-full flex justify-center gap-2 items-center text-[#3b80ff]"
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
-                        stroke="white"
-                        className="w-5 h-5 transition-all duration-300"
+                        stroke="#3b80ff"
+                        className="w-5 h-5"
                       >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                          d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
                         />
                       </svg>
-                    </button>
-                  )}
-                  {quantity(state, product.id) > 1 && (
-                    <button
-                      onClick={() =>
-                        dispatch({ type: "DECREASE", payload: product })
-                      }
-                      className="w-9 h-9 flex justify-center items-center bg-[#3b80ff] rounded-lg hover:bg-[#1165ff] transition-all duration-300"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="white"
-                        className="w-5 h-5 transition-all duration-300"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M18 12H6"
-                        />
-                      </svg>
-                    </button>
+
+                      <span className="text-[12px]">مشاهده سبد خرید</span>
+                    </Link>
                   )}
                 </div>
               </div>
