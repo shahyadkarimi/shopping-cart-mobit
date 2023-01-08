@@ -9,7 +9,6 @@ import {
   toFarsiNumber,
   isInCart,
   quantity,
-  idGenerator,
 } from "../../helper/functions";
 
 // --- contexts
@@ -18,8 +17,6 @@ import { cartContext } from "../../contexts/CartContext";
 
 // components
 import ImageSlider from "./ImageSlider";
-import SectionTitle from "../shared/SectionTitle";
-import SpecialOfferProducts from "../Home/SpecialOfferProducts";
 
 const ProductPage = () => {
   // cart context
@@ -138,6 +135,29 @@ const ProductPage = () => {
                   </svg>
                 </button>
               )}
+              {isInCart(state, product.id) && (
+                <Link
+                  to="/cart"
+                  className="go-to-cart flex justify-center gap-2 items-center text-[#3b80ff]"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="#3b80ff"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                    />
+                  </svg>
+
+                  <span className="text-[12px]">مشاهده سبد خرید</span>
+                </Link>
+              )}
             </div>
             <div className="price-sec flex flex-col gap-1 mt-[10px]">
               <div className="off-price flex justify-between">
@@ -170,14 +190,14 @@ const ProductPage = () => {
           </div>
 
           {/* product details */}
-          <div className="product-details w-full mb-24 px-5 lg:mt-6 lg:px-0 lg:pl-5">
+          <div className="product-details w-full mb-5 px-5 lg:mt-6 lg:px-0 lg:pl-5">
             <div className="titles flex flex-col gap-2">
               <div className="text-lg fa-title">
                 <h2>{product.title}</h2>
               </div>
               <div className="en-title flex flex-col gap-1 text-[14.5px] text-[#666]">
                 <h3 className="text-left">{product.enTitle}</h3>
-                <h4 className="text-center relative">Mbt-21129</h4>
+                <h4 className="text-center -z-10 relative">Mbt-21129</h4>
               </div>
             </div>
             <div className="description mt-2">
@@ -189,8 +209,8 @@ const ProductPage = () => {
           </div>
 
           {/* seller details */}
-          <div className="pl-5 mt-6 hidden lg:block">
-            <div className="w-[230px] xl:w-[250px] 2xl:w-[280px] h-auto bg-[#f5f5f5] rounded-xl p-3">
+          <div className="px-5 lg:pl-5 lg:mt-6 mb-24">
+            <div className="w-full lg:w-[230px] xl:w-[250px] 2xl:w-[280px] h-auto bg-[#f5f5f5] rounded-xl p-3">
               <h2 className="text-[#353535] text-[17px] font-semibold mb-3">
                 فروشنده
               </h2>
@@ -213,7 +233,7 @@ const ProductPage = () => {
                   <h3> مبیت </h3>
                 </div>
                 {/* rate */}
-                <div className="rate-performance flex justify-center items-center gap-2 mt-3 pb-2 border-b">
+                <div className="rate-performance flex justify-evenly lg:justify-center items-center gap-2 mt-3 pb-2 border-b">
                   <div className="rate flex">
                     <span className="text-[#666] text-[14px] font-semibold">
                       امتیاز :
@@ -262,7 +282,7 @@ const ProductPage = () => {
                 <h3 className="text-[15px] self-end">گارانتی ۱۸ ماهه شرکتی</h3>
               </div>
               {/* product in store */}
-              <div className="store flex gap-2 font-semibold text-[#353535] mt-3 pb-3 border-b">
+              <div className="store flex gap-2 font-semibold text-[#353535] mt-3 pb-3 lg:border-b">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -280,7 +300,7 @@ const ProductPage = () => {
                 <h3 className="text-[15px] self-end"> موجود در انبار موبیت </h3>
               </div>
               {/* product price & add to cart btns */}
-              <div className="price-add-btn flex flex-col items-end mt-3">
+              <div className="price-add-btn hidden lg:flex flex-col items-end mt-3">
                 <div className="price mb-1">
                   <div className="off-price flex justify-between">
                     <span className="line-through text-[#353535]">

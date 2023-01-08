@@ -24,7 +24,7 @@ const ImageSlider = ({ data }) => {
             <div key={idGenerator()} className={slider.id === index ? "bg-[#f5f5f5] opacity-100 p-3 rounded-2xl cursor-pointer" : "bg-[#f5f5f5] opacity-40 p-3 rounded-2xl cursor-pointer"}>
                 
               <img
-                className="w-[70px] h-[70px]"
+                className="w-[55px] h-[55px] sm:w-[70px] sm:h-[70px]"
                 src={image.img}
                 onClick={() => clickHandler(index)}
                 alt=""
