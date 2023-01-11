@@ -54,12 +54,13 @@ const SpecialOfferProducts = () => {
     return (
         <div className="products lg:max-w-[1118px] xl:max-w-[1245px] 2xl:max-w-[1415px] mx-auto">
             <Swiper className="mySwiper" slidesPerView={productPerView}  navigation={true} modules={[Navigation]}>
-                {data && data.map(product => (
+                {data && data.product.map(product => (
                     product.category === "special" &&
                     <SwiperSlide className="p-1" key={product.id}>
-                        <Product data={product} /> 
+                        <Product data={product} />
                     </SwiperSlide>
                 ))}
+                {/* {console.log(data && data.product)} */}
             </Swiper>
             {/* data.category === "special" */}
         </div>

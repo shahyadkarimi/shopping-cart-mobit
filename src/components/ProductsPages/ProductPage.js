@@ -28,15 +28,16 @@ const ProductPage = () => {
 
   // get data
   const products = useContext(ProductsContexts);
+  console.log(products.data && products.data.product)
 
   // find the product
   const product =
     products.data &&
-    products.data.find((product) => product.id === productParams);
+    products.data.product.find((product) => product.id === productParams);
 
   return (
     <div>
-      {product && (
+      {products.data && (
         <div className="flex flex-col lg:flex-row">
           {/* image slider */}
           <ImageSlider data={product} />
