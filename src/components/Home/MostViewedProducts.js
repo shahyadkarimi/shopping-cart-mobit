@@ -40,7 +40,7 @@ const MostViewedProducts = () => {
     let productPerView;
 
     if(windowSize.innerWidth < 640){
-        productPerView = 2.15
+        productPerView = 2
     }else if (windowSize.innerWidth >= 640 && windowSize.innerWidth <= 1024) {
         productPerView = 3.15
     } else {
