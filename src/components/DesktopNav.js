@@ -1,11 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 // --- components
 import CartProductPerview from "./Cart/CartProductPerview";
+import SearchedProduct from "./shared/SearchedProduct"
 
 // --- context
 import { cartContext } from "../contexts/CartContext";
+import { ProductsContexts } from "../contexts/ProductsContext"
 
 // --- functions
 import { toFarsiNumber } from "../helper/functions";
@@ -19,8 +21,33 @@ import shop from "../images/shop.svg";
 
 const DesktopNav = () => {
   // products
+  const products = useContext(ProductsContexts)
+
+  // products in cart
   const { state } = useContext(cartContext);
 
+  // search state
+  const [search, setSearch] = useState("");
+
+  // filtered products
+  const [filteredProducts, setFilteredProducts] = useState([])
+
+  // search input changeHandler
+  const searchProducts = (e) => {
+    setSearch(e.target.value);
+  };
+  const searchBar = useRef(null)
+
+  // set flitered products in state
+  useEffect(() => {
+    const searchedProducts = products.data && products.data.product.filter(product => search && product.title.includes(search))
+    setFilteredProducts(searchedProducts)
+  }, [search, products])
+
+
+  const closeSearchBar = () => {
+    setSearch("")
+  }
   return (
     <div className="hidden lg:block shadow-[0px_0px_10px_0px_#00000020] px-10 xl:px-20 2xl:px-28">
       <div className="w-full h-16 flex items-center justify-between">
@@ -34,6 +61,8 @@ const DesktopNav = () => {
               className="w-[450px] xl:w-[600px] 2xl:w-[750px] bg-[#f5f5f5] h-11 rounded-lg px-16 outline-none ring-[#3b80ff] focus:ring-2 transition-all duration-500"
               type="text"
               placeholder="جست و جو در مبیت"
+              value={search}
+              onChange={searchProducts}
             />
             <div className="search-icon absolute -translate-y-2/4 top-2/4 border-l w-12 h-7 flex items-center justify-center">
               <svg
@@ -50,6 +79,11 @@ const DesktopNav = () => {
                   d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
                 />
               </svg>
+            </div>
+            <div onClick={closeSearchBar} ref={searchBar} className="search-product absolute bg-white flex flex-col gap-2 w-full h-auto rounded-lg mt-2 px-3 z-10 shadow-2xl">
+              {
+                filteredProducts && filteredProducts.map(product => <SearchedProduct key={product.id} data={product} />)
+              }
             </div>
           </div>
           <div className="city flex items-center gap-1">

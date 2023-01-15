@@ -1,20 +1,54 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+
+// components
+import SearchedProduct from "./shared/SearchedProduct";
 
 // images
 import logo from "../images/mobit-logo.svg";
 
 // --- context
 import { cartContext } from "../contexts/CartContext";
+import { ProductsContexts } from "../contexts/ProductsContext";
 import { toFarsiNumber } from "../helper/functions";
 
 const MobileNav = () => {
   const { state } = useContext(cartContext);
 
+  // products
+  const products = useContext(ProductsContexts);
+
+  // search state
+  const [search, setSearch] = useState("");
+
+  // filtered products
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  // search input changeHandler
+  const searchProducts = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const searchBar = useRef(null);
+
+  // set flitered products in state
+  useEffect(() => {
+    const searchedProducts =
+      products.data &&
+      products.data.product.filter(
+        (product) => search && product.title.includes(search)
+      );
+    setFilteredProducts(searchedProducts);
+  }, [search, products]);
+
+  const closeSearchBar = () => {
+    setSearch("");
+  };
+
   return (
-    <div className="lg:hidden pb-3 shadow-[0px_0px_10px_0px_#00000020]">
+    <div className="lg:hidden pb-3 shadow-[0px_0px_10px_0px_#00000020] px-3 sm:px-5">
       {/* Navbar */}
-      <div className="navbar w-full flex justify-between items-center h-14 px-3 sm:px-5">
+      <div className="navbar w-full flex justify-between items-center h-14">
         <div className="menu-bars bg-slate-50 cursor-pointer w-9 h-9 flex justify-center items-center rounded-md">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +87,7 @@ const MobileNav = () => {
                 />
               </svg>
               <span className="absolute text-xs flex justify-center items-center text-white w-4 h-4 -top-1 -right-1 bg-[#3b80ff] rounded-md">
-                  {toFarsiNumber(state.selectedItems.length)}
+                {toFarsiNumber(state.selectedItems.length)}
               </span>
             </Link>
           ) : (
@@ -75,7 +109,7 @@ const MobileNav = () => {
               </svg>
 
               <span className="absolute text-xs flex justify-center items-center text-white w-4 h-4 -top-1 -right-1 bg-[#3b80ff] rounded-md">
-                  {toFarsiNumber(state.selectedItems.length)}
+                {toFarsiNumber(state.selectedItems.length)}
               </span>
             </Link>
           )}
@@ -83,13 +117,15 @@ const MobileNav = () => {
       </div>
 
       {/* Search bar */}
-      <div className="search relative px-3 sm:px-5">
+      <div className="search relative ">
         <input
           className="w-full bg-[#f5f5f5] h-11 rounded-lg px-12 outline-none ring-[#3b80ff] focus:ring-2 transition-all duration-500"
           type="text"
           placeholder="جست و جو در مبیت"
+          onChange={searchProducts}
+          value={search}
         />
-        <div className="search-icon absolute -translate-y-2/4 top-2/4 right-8">
+        <div className="search-icon absolute -translate-y-2/4 top-2/4 right-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -104,6 +140,15 @@ const MobileNav = () => {
               d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
             />
           </svg>
+        </div>
+        <div
+        onClick={closeSearchBar}
+          ref={searchBar}
+          className="search-product absolute bg-white flex flex-col gap-2 w-full h-auto rounded-lg mt-2 px-3 z-10 shadow-2xl"
+        >
+          {filteredProducts && filteredProducts.map((product) => (
+            <SearchedProduct key={product.id} data={product} />
+          ))}
         </div>
       </div>
     </div>

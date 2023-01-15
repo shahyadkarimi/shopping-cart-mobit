@@ -1,15 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 
 // ---- css
 import "./ProductPage.css";
 
 // --- functions
-import {
-  toFarsiNumber,
-  isInCart,
-  quantity,
-} from "../../helper/functions";
+import { toFarsiNumber, isInCart, quantity } from "../../helper/functions";
 
 // --- contexts
 import { ProductsContexts } from "../../contexts/ProductsContext";
@@ -28,7 +24,6 @@ const ProductPage = () => {
 
   // get data
   const products = useContext(ProductsContexts);
-  console.log(products.data && products.data.product)
 
   // find the product
   const product =

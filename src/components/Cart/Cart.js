@@ -15,7 +15,6 @@ import { cartContext } from "../../contexts/CartContext";
 
 const Cart = () => {
   const { state, dispatch } = useContext(cartContext);
-  console.log(state);
   return (
     <div className="">
       {state.selectedItems.length !== 0 ? (
