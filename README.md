@@ -1,21 +1,21 @@
 ![shoping cart](./src/images/mobit/mobit-1.PNG)
 <br>
 
-![shoping cart](./src/images/mobit/mobit-1.PNG)
+![shoping cart](./src/images/mobit/mobit-2.PNG)
 <br>
 
-![shoping cart](./src/images/mobit/mobit-1.PNG)
+![shoping cart](./src/images/mobit/mobit-3.PNG)
 <br>
 
-![shoping cart](./src/images/mobit/mobit-1.PNG)
+![shoping cart](./src/images/mobit/mobit-4.PNG)
 <br>
 mobit on desktop
 
-![shoping cart](./src/images/mobit/mobit-1.PNG)
+![shoping cart](./src/images/mobit/mobit-5.PNG)
 <br>
 mobit on mobile devices
 
-![shoping cart](./src/images/mobit/mobit-1.PNG)
+![shoping cart](./src/images/mobit/mobit-6.PNG)
 <br>
 mobit on mobile devices
 
